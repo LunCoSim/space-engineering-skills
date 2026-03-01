@@ -1,0 +1,23 @@
+{
+  "skill_name": "requirements-manager",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a set of requirements for the thermal subsystem of a lunar rover. It must survive the lunar night (-170C) and operate during the day up to 120C. It needs a radiator and survival heaters. The survival heaters must draw no more than 15W. Save the requirements in skills/requirements-manager/evals/test-requirements/",
+      "expected_output": "Markdown files created in skills/requirements-manager/evals/test-requirements/ with properly formatted requirement blocks.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "We just changed the thermal design. Update the survival heater requirement located in skills/requirements-manager/evals/test-requirements/ to allow up to 20W of power draw instead of 15W. Add a note to the history.",
+      "expected_output": "The requirement block for the survival heater in the sandbox directory is updated with 20W and a history note is added.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "Run a traceability audit on the thermal requirements located in skills/requirements-manager/evals/test-requirements/. Provide me a list of all orphan requirements.",
+      "expected_output": "A list describing which requirements in the sandbox directory are missing parents.",
+      "files": []
+    }
+  ]
+}
