@@ -1,0 +1,12 @@
+{
+  "skill_name": "thermal-assessment",
+  "evals": [
+    {
+      "id": 1,
+      "name": "mars-rover-night-survival",
+      "prompt": "Perform a 2-node thermal analysis (Internal Electronics Box and Outer Shell) for a Mars rover during a winter night at the poles. Assume solar distance is 1.6 AU, surface temperature is -120C, and internal electronics dissipate 5W. Can it survive if the shell is covered in MLI (eps_eff=0.03)?",
+      "expected_output": "A thermal report showing the temperature of the internal electronics box and confirming survival status against standard electronics limits (-40C).",
+      "files": []
+    }
+  ]
+}
