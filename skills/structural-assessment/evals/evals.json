@@ -1,0 +1,12 @@
+{
+  "skill_name": "structural-assessment",
+  "evals": [
+    {
+      "id": 1,
+      "name": "cubesat-launch-margin",
+      "prompt": "Calculate the Margin of Safety for a 6U CubeSat bracket made of Al-6061-T6 (Yield Strength 240 MPa) under a 10G axial launch load. The bracket cross-section is 50mm2 and supports a 2kg payload.",
+      "expected_output": "A report showing the stress calculation (~3.9 MPa) and a high positive Margin of Safety (~47).",
+      "files": []
+    }
+  ]
+}

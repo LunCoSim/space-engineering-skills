@@ -1,0 +1,12 @@
+{
+  "skill_name": "reliability-assessment",
+  "evals": [
+    {
+      "id": 1,
+      "name": "redundant-radio-reliability",
+      "prompt": "Calculate the 1-year system reliability for a communication link with two redundant radios. Each radio has a failure rate of 500 FITs (failures per 10^9 hours). Does this meet a 99.9% reliability requirement?",
+      "expected_output": "A report showing the calculation for parallel reliability and confirming if it meets the 99.9% threshold.",
+      "files": []
+    }
+  ]
+}

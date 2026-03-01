@@ -1,0 +1,12 @@
+{
+  "skill_name": "propulsion-assessment",
+  "evals": [
+    {
+      "id": 1,
+      "name": "lunar-landing-sizing",
+      "prompt": "Size the propellant for a 500kg (dry mass) lunar lander using a 320s Isp engine to perform a 2500 m/s landing burn. Assume 10% delta-v margin.",
+      "expected_output": "A report calculating a total delta-v of 2750 m/s and a propellant mass of approximately 700-750kg.",
+      "files": []
+    }
+  ]
+}
