@@ -10,6 +10,15 @@ This repository houses a suite of **Space Engineering Skills**. These skills emp
 2. **Standardization**: When dealing with industry data, always prefer established standards (e.g., ReqIF for requirements, XTCE for telemetry) *as an export/import layer*, while keeping the internal human-readable layer simple (Markdown/YAML).
 3. **Progressive Disclosure**: Keep skill files concise. The main `SKILL.md` should be under 500 lines. Use the `scripts/` and `references/` directories to offload complexity.
 
+## Current Capability Map
+As an agent, you have the following specialized skills available in the `skills/` directory to help you solve complex mission design tasks:
+
+- **Requirements Management**: `requirements-manager` (Define, update, and trace system requirements).
+- **Integrated Systems Assessment**: `systems-engineering-assessment` (The Integrator - Mass, Power, and Link budgets).
+- **Mission Context**: `orbital-conops-manager` (Earth orbit) and `lunar-conops-manager` (Lunar surface & night survival).
+- **Domain Analysis**: `thermal-assessment` (Heat balance), `structural-assessment` (Loads & MoS), `propulsion-assessment` (Delta-V), `reliability-assessment` (Risk & Radiation).
+- **Closure**: `v-and-v-manager` (Verification Control Matrix & compliance audit).
+
 ## Directory Structure Rules
 
 When creating or modifying a skill, adhere strictly to this structure:
@@ -34,3 +43,5 @@ skills/
 
 ## Workflow Rules
 1. **Ask for Clarification**: Space engineering is an exact science. If an instruction regarding margins, thermal limits, orbital mechanics, or other things is ambiguous, stop and ask the user. Do not guess engineering values.
+2. **Cross-Skill Collaboration**: Skills are designed to work together. When performing an assessment (e.g., `v-and-v-manager`), proactively look for outputs from other skills (like `thermal-assessment`) to use as evidence.
+3. **Output Management**: While artifacts should generally stay within a skill's directory, high-level "Integrated Reports" (e.g. Mission Assessment Reports) that combine data from multiple skills should be placed in a dedicated `missions/[mission-name]/` directory at the project root for consolidated review.
