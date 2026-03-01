@@ -7,7 +7,7 @@
       "prompt": "Run a full systems assessment for a Lunar Rover. Use the thermal requirements in `skills/requirements-manager/evals/test-requirements/thermal.md` as context. Assume a 200kg launch capacity and an S-band downlink to Earth.",
       "expected_output": "An assessment report containing mass, power, and link budgets with a specific mention of surviving the -170C lunar night and 20W heater limit.",
       "files": [
-        "/home/rod/Documents/lunco/space-engineering-skills/skills/requirements-manager/evals/test-requirements/thermal.md"
+        "skills/requirements-manager/evals/test-requirements/thermal.md"
       ]
     }
   ]
