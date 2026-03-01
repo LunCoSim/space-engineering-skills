@@ -1,0 +1,12 @@
+{
+  "skill_name": "lunar-conops-manager",
+  "evals": [
+    {
+      "id": 1,
+      "name": "shackleton-crater-stay",
+      "prompt": "Define a 30-day surface mission for a lander at the lunar south pole (Shackleton Crater). Plan for one complete lunar night and identify a 100m rover traverse during the following day.",
+      "expected_output": "A lunar mission profile document defining 'Survival Mode' during the night and a waypoint list for the 100m traverse.",
+      "files": []
+    }
+  ]
+}

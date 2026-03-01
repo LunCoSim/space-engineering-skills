@@ -1,0 +1,14 @@
+{
+  "skill_name": "v-and-v-manager",
+  "evals": [
+    {
+      "id": 1,
+      "name": "thermal-compliance-audit",
+      "prompt": "Run a V&V audit for the thermal requirements in `skills/requirements-manager/evals/test-requirements/thermal.md`. Check if any existing analysis files can verify these, and list what is missing.",
+      "expected_output": "A VCM showing the status of the thermal requirements. It should flag most as 'OPEN' since no formal thermal_model.md exists yet in the context.",
+      "files": [
+        "/home/rod/Documents/lunco/space-engineering-skills/skills/requirements-manager/evals/test-requirements/thermal.md"
+      ]
+    }
+  ]
+}

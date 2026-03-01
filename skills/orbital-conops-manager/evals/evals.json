@@ -1,0 +1,12 @@
+{
+  "skill_name": "orbital-conops-manager",
+  "evals": [
+    {
+      "id": 1,
+      "name": "iss-orbit-conops",
+      "prompt": "Define the ConOps for a 3U CubeSat deploying from the ISS (400km, 51.6 deg). Calculate the max eclipse duration and define the phases for a 6-month mission.",
+      "expected_output": "A ConOps document with defined phases and an eclipse calculation of approximately 35-37 minutes.",
+      "files": []
+    }
+  ]
+}
