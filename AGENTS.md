@@ -20,6 +20,7 @@ As an agent, you have the following specialized skills available in the `skills/
 - **Domain Analysis**: `power-assessment` (Solar array & battery sizing), `communications-assessment` (Link budgets), `thermal-assessment` (Heat balance), `structural-assessment` (Loads & MoS), `propulsion-assessment` (Delta-V), `gnc-assessment` (Pointing & actuators).
 - **Reliability & Safety**: `reliability-assessment` (Risk & Radiation), `hazard-analysis` (Safety & Inhibits).
 - **Embedded Systems**: `flight-software-architect` (FSW architecture & FDIR logic).
+- **Programmatic**: `cost-estimation` (Parametric cost modeling, CERs, cost-risk S-curves, design-to-cost).
 - **Closure & Execution**: `v-and-v-manager` (Compliance audit) and `ait-manager` (Assembly, Integration, and Test).
 
 

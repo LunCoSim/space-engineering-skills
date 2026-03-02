@@ -76,6 +76,9 @@ graph TD
     LC[lunar-conops-manager] --> MAS
     MOM[mission-operations-manager] --> OC
     MOM --> LC
+
+    SE --> CE[cost-estimation]
+    TS --> CE
 ```
 
 ---
@@ -93,6 +96,7 @@ graph TD
 | **Operations** | [lunar-conops-manager](skills/lunar-conops-manager) | Lunar surface ops, traverse planning, and day/night cycling. |
 | **Operations** | [mission-operations-manager](skills/mission-operations-manager) | T&C definitions, pass planning, and anomaly resolution. |
 | **Operations** | [ait-manager](skills/ait-manager) | AIT planning, model philosophy, GSE, and cleanliness. |
+| **Programmatic** | [cost-estimation](skills/cost-estimation) | Parametric cost modeling, CERs, cost-risk S-curves, design-to-cost. |
 | **Analysis** | [payload-assessment](skills/payload-assessment) | Instrument sizing, data rate derivation, bus requirements flowdown. |
 | **Analysis** | [mission-analysis-specialist](skills/mission-analysis-specialist) | Astrodynamics, trajectory design, and delta-v budgets. |
 | **Analysis** | [thermal-assessment](skills/thermal-assessment) | Heat balance, radiator sizing, and surface properties. |

@@ -1,0 +1,33 @@
+{
+    "skill_name": "cost-estimation",
+    "evals": [
+        {
+            "id": 1,
+            "name": "cubesat-rom-cost",
+            "prompt": "Estimate the ROM cost for a 6U Earth observation CubeSat (12 kg dry mass) with a COTS multispectral imager, launched as a rideshare to SSO. NewSpace commercial approach, Phase A estimate. Include spacecraft bus, payload, launch, ground segment (1 year ops using GaaS), and reserves.",
+            "expected_output": "A cost breakdown report totaling approximately $3-8M (FY2025$) with subsystem-level hardware costs, NewSpace adjustment factors applied, launch cost around $60-70K (rideshare), ground segment cost, and 30-50% reserve. Should include P50 confidence statement and cost drivers.",
+            "files": []
+        },
+        {
+            "id": 2,
+            "name": "lunar-lander-cost-comparison",
+            "prompt": "Compare the estimated development cost of two lunar lander options: Option A is a 300 kg (dry) lander using heritage bipropellant propulsion (TRL 8), and Option B is a 200 kg (dry) lander using a novel green monopropellant system (TRL 5). Both deliver 50 kg payload to the lunar surface. Provide a side-by-side cost comparison suitable for a trade study.",
+            "expected_output": "A comparison table showing Option A at lower unit cost due to heritage (lower complexity factor) but Option B potentially cheaper at scale. Should flag TRL 5 as a cost risk driver for Option B, apply appropriate complexity factors, and show that Option B likely has higher development cost but lower propulsion hardware cost. Total estimates in the $50-200M range per option.",
+            "files": []
+        },
+        {
+            "id": 3,
+            "name": "constellation-unit-cost",
+            "prompt": "Estimate the per-satellite recurring cost for a 100-satellite LEO IoT constellation. Each satellite is 25 kg, uses COTS components throughout, has a UHF payload, and is manufactured on a production line. Assume batch production with learning curve effects.",
+            "expected_output": "A report showing first-unit cost (likely $1-3M) and how learning curve (typically 85-95% for space hardware) reduces per-unit cost by the 100th satellite. Should include production line cost amortization, a cost-per-kg sanity check, and flag that NRE (non-recurring engineering) should be amortized across the constellation.",
+            "files": []
+        },
+        {
+            "id": 4,
+            "name": "design-to-cost-analysis",
+            "prompt": "A startup has a $15M total budget to build and launch a 100 kg-class SAR microsatellite to SSO. Is this feasible? If not, what trades would you recommend to fit within the budget? Assume NewSpace approach.",
+            "expected_output": "An analysis working backward from the $15M cap, allocating budget to hardware (~$5-7M), launch (~$1-2M rideshare), ground (~$1-2M), I&T (~$1M), PM/SE (~$1.5M), and reserves (~$2-3M). Should identify SAR payload as the primary cost driver and recommend trades such as reducing antenna size, using COTS radar electronics, or partnering for payload. Status should be 🟡 or 🔴 depending on SAR complexity.",
+            "files": []
+        }
+    ]
+}
