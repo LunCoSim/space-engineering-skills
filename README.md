@@ -20,14 +20,25 @@ npx skills add LunCoSim/space-engineering-skills
 
 Skills are markdown files (`SKILL.md`) that give AI agents specialized knowledge and workflows for specific tasks. When you add these to your project, your agent can recognize when you're working on a space engineering task and apply the right frameworks, standards, and best practices.
 
+## 📋 Shared Conventions
+
+All skills follow a shared protocol defined in [CONVENTIONS.md](CONVENTIONS.md). This covers:
+- **Clarification-first rule** — skills ask about mission type, target body, standards, and design phase before producing analysis
+- **Data flow** — standardized file locations (`/requirements/`, `/analysis/[skill-name]/`) for multi-agent workflows
+- **Phase-gate mapping** — which skills are relevant at which design phase (A through D)
+- **Conflict escalation** — how budget overruns and inconsistencies are handled
+- **Output format** — human-readable Markdown with traffic-light status indicators
+
 ## 🔗 How Skills Work Together
 
-Skills reference each other and build on shared context. The `requirements-manager` skill is the foundation — every other skill checks it first to understand your system requirements, constraints, and verification criteria before doing anything.
+Skills reference each other and build on shared context. `requirements-manager` is the foundation, `trade-study-manager` shapes the architecture, domain skills perform detailed analysis, and `v-and-v-manager` closes the loop.
 
 ```mermaid
 graph TD
-    RM[requirements-manager] --> SE[systems-engineering-assessment]
+    TS[trade-study-manager] --> RM[requirements-manager]
+    RM --> SE[systems-engineering-assessment]
     RM --> VV[v-and-v-manager]
+    RM --> PL[payload-assessment]
     RM --> TA[thermal-assessment]
     RM --> SA[structural-assessment]
     RM --> PA[propulsion-assessment]
@@ -38,14 +49,20 @@ graph TD
     RM --> COM[communications-assessment]
     RM --> FSW[flight-software-architect]
     RM --> AIT[ait-manager]
-    
+
+    PL --> SE
     SE <--> TA
     SE <--> SA
     SE <--> PA
     SE <--> GNC
     SE <--> EPS
     SE <--> COM
-    
+
+    MAS[mission-analysis-specialist] --> PA
+    MAS --> EPS
+    MAS --> TA
+    MAS --> COM
+
     TA --- VV
     SA --- VV
     PA --- VV
@@ -53,9 +70,12 @@ graph TD
     GNC --- VV
     EPS --- VV
     COM --- VV
-    
-    OC[orbital-conops-manager] --> RM
-    LC[lunar-conops-manager] --> RM
+    AIT --- VV
+
+    OC[orbital-conops-manager] --> MAS
+    LC[lunar-conops-manager] --> MAS
+    MOM[mission-operations-manager] --> OC
+    MOM --> LC
 ```
 
 ---
@@ -64,23 +84,25 @@ graph TD
 
 | Category | Skill | Summary |
 | :--- | :--- | :--- |
-| **Management** | [requirements-manager](skills/requirements-manager) | Define, update, and trace system requirements in a human-readable format. |
-| **Management** | [v-and-v-manager](skills/v-and-v-manager) | Manage Verification and Validation (V&V) by linking assessments to requirements. |
-| **Management** | [systems-engineering-assessment](skills/systems-engineering-assessment) | Top-level integrator for mass, power, and link budgets. |
-| **Management** | [hazard-analysis](skills/hazard-analysis) | Top-down safety identification, risk indexing, and controls. |
-| **Operations** | [orbital-conops-manager](skills/orbital-conops-manager) | Concept of Operations and orbital mechanics for Earth missions. |
-| **Operations** | [lunar-conops-manager](skills/lunar-conops-manager) | Surface operations, traverse planning, and 14-day lunar cycle management. |
+| **Architecture** | [trade-study-manager](skills/trade-study-manager) | Structured trade studies, Figures of Merit, decision analysis. |
+| **Management** | [requirements-manager](skills/requirements-manager) | Define, update, and trace system requirements. |
+| **Management** | [v-and-v-manager](skills/v-and-v-manager) | Verification & Validation with compliance tracking. |
+| **Management** | [systems-engineering-assessment](skills/systems-engineering-assessment) | Top-level budget integrator and conflict resolver. |
+| **Management** | [hazard-analysis](skills/hazard-analysis) | Top-down safety, risk indexing, and controls. |
+| **Operations** | [orbital-conops-manager](skills/orbital-conops-manager) | Mission phases, operational modes, and disposal planning. |
+| **Operations** | [lunar-conops-manager](skills/lunar-conops-manager) | Lunar surface ops, traverse planning, and day/night cycling. |
 | **Operations** | [mission-operations-manager](skills/mission-operations-manager) | T&C definitions, pass planning, and anomaly resolution. |
-| **Operations** | [ait-manager](skills/ait-manager) | Assembly, Integration, and Test planning and GSE requirements. |
+| **Operations** | [ait-manager](skills/ait-manager) | AIT planning, model philosophy, GSE, and cleanliness. |
+| **Analysis** | [payload-assessment](skills/payload-assessment) | Instrument sizing, data rate derivation, bus requirements flowdown. |
 | **Analysis** | [mission-analysis-specialist](skills/mission-analysis-specialist) | Astrodynamics, trajectory design, and delta-v budgets. |
-| **Analysis** | [thermal-assessment](skills/thermal-assessment) | Heat balance, radiator sizing, and MLI modeling. |
-| **Analysis** | [structural-assessment](skills/structural-assessment) | Mass properties, CG, MOI, and Margins of Safety analysis. |
-| **Analysis** | [propulsion-assessment](skills/propulsion-assessment) | Delta-V requirements, propellant sizing, and T/W ratios. |
-| **Analysis** | [reliability-assessment](skills/reliability-assessment) | FMECA, TID, and mission life probability modeling. |
-| **Analysis** | [gnc-assessment](skills/gnc-assessment) | Pointing budgets, actuator sizing (wheels/rods), and sensor selection. |
-| **Analysis** | [power-assessment](skills/power-assessment) | Solar array BOL/EOL sizing and battery DoD analysis. |
-| **Analysis** | [communications-assessment](skills/communications-assessment) | RF link budget analysis and data volume assessments. |
-| **Analysis** | [flight-software-architect](skills/flight-software-architect) | FSW architecture, processor sizing, and FDIR logic. |
+| **Analysis** | [thermal-assessment](skills/thermal-assessment) | Heat balance, radiator sizing, and surface properties. |
+| **Analysis** | [structural-assessment](skills/structural-assessment) | Mass properties, CG, MOI, and Margins of Safety. |
+| **Analysis** | [propulsion-assessment](skills/propulsion-assessment) | Chemical & electric propulsion sizing, tank design. |
+| **Analysis** | [reliability-assessment](skills/reliability-assessment) | FMECA, TID, parts derating, and mission reliability. |
+| **Analysis** | [gnc-assessment](skills/gnc-assessment) | Pointing budgets, actuator sizing, attitude modes. |
+| **Analysis** | [power-assessment](skills/power-assessment) | Solar array/battery sizing, alternative power sources. |
+| **Analysis** | [communications-assessment](skills/communications-assessment) | RF link budgets, data volume, and ground segment. |
+| **Analysis** | [flight-software-architect](skills/flight-software-architect) | FSW architecture, OBC selection, and FDIR design. |
 
 ---
 
@@ -112,7 +134,8 @@ Once installed, your AI agent will automatically detect the skills and use them 
 **Example Prompts:**
 - *"Create a new requirement for the power system that specifies 100W peak power."*
 - *"Perform a preliminary thermal assessment for a 12U CubeSat in LEO."*
-- *"Trace the structural requirements to the CAD verification test plan."*
+- *"Run a trade study comparing chemical vs electric propulsion for our lunar orbiter."*
+- *"Size the optical payload for 5m GSD from a 500km orbit."*
 
 ---
 
@@ -121,4 +144,3 @@ Found a way to improve a skill or have a new one to add? [Open a PR](https://git
 
 ## 📄 License
 This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for more details.
-
