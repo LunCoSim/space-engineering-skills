@@ -76,6 +76,39 @@ graph TD
     LC[lunar-conops-manager] --> MAS
     MOM[mission-operations-manager] --> OC
     MOM --> LC
+
+    SE --> CM[cost-modeling]
+    PA --> CM
+    CM --> TS
+
+    SA --> MFG[manufacturing-assessment]
+    MFG --> CM
+    MFG --> AIT
+
+    PA --> REUSE[reusability-analysis]
+    SA --> REUSE
+    CM --> REUSE
+    REUSE --> CM
+
+    EPS --> ECLSS[eclss-assessment]
+    TA --> ECLSS
+    ECLSS --> SE
+
+    MAS --> ISRU[isru-assessment]
+    EPS --> ISRU
+    ISRU --> PA
+    ISRU --> ECLSS
+    ISRU --> CM
+
+    MAS --> CD[constellation-design]
+    COM --> CD
+    CM --> CD
+    CD --> SE
+
+    COM --> GS[ground-systems-assessment]
+    MAS --> GS
+    MOM --> GS
+    GS --> CM
 ```
 
 ---
@@ -102,7 +135,14 @@ graph TD
 | **Analysis** | [gnc-assessment](skills/gnc-assessment) | Pointing budgets, actuator sizing, attitude modes. |
 | **Analysis** | [power-assessment](skills/power-assessment) | Solar array/battery sizing, alternative power sources. |
 | **Analysis** | [communications-assessment](skills/communications-assessment) | RF link budgets, data volume, and ground segment. |
-| **Analysis** | [flight-software-architect](skills/flight-software-architect) | FSW architecture, OBC selection, and FDIR design. |
+| **Analysis** | [flight-software-architect](skills/flight-software-architect) | FSW architecture, OBC selection, FDIR, CI/CD, and simulation-in-the-loop. |
+| **Cost & Production** | [cost-modeling](skills/cost-modeling) | Parametric cost estimation, CERs, launch costs, lifecycle costing. |
+| **Cost & Production** | [manufacturing-assessment](skills/manufacturing-assessment) | DFM/DFA, make-vs-buy, production rate, and quality planning. |
+| **Cost & Production** | [reusability-analysis](skills/reusability-analysis) | Recovery systems, refurbishment cost, reuse degradation, flight-rate economics. |
+| **Human Spaceflight** | [eclss-assessment](skills/eclss-assessment) | Life support: O₂, CO₂, water recovery, habitable volume. |
+| **Human Spaceflight** | [isru-assessment](skills/isru-assessment) | In-situ resource utilization: regolith processing, propellant production. |
+| **Constellation** | [constellation-design](skills/constellation-design) | Walker patterns, coverage analysis, ISLs, deployment strategy. |
+| **Ground Segment** | [ground-systems-assessment](skills/ground-systems-assessment) | Mission control, ground stations, launch facilities, GSE. |
 
 ---
 

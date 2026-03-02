@@ -1,6 +1,6 @@
 ---
 name: flight-software-architect
-description: Define Flight Software (FSW) architectures and C&DH hardware requirements. Use this skill to size processors, estimate memory, plan software tasking, and design FDIR strategies. Trigger this for "FSW architecture," "processor sizing," "data handling," "FDIR design," or "onboard computer selection."
+description: Define Flight Software (FSW) architectures, C&DH hardware requirements, and modern DevOps practices for space. Use this skill to size processors, estimate memory, plan software tasking, design FDIR strategies, plan CI/CD pipelines, set up simulation-in-the-loop testing, and define automated test infrastructure. Trigger this for "FSW architecture," "processor sizing," "data handling," "FDIR design," "onboard computer selection," "CI/CD for flight software," "simulation in the loop," "DevOps for space," or "automated FSW testing."
 ---
 
 # Flight Software & C&DH Architect Skill
@@ -48,6 +48,35 @@ Ask the user (if not already known):
 - **Housekeeping**: Define critical vs. diagnostic telemetry rates
 - **CPU utilization budget**: Nominal vs. peak (e.g., imaging + downlink + GNC simultaneously)
 - **Boot sequence**: Cold boot, warm boot, safe-mode boot — define expected behavior and duration
+
+### 4. DevOps & CI/CD for Flight Software
+Modern FSW development uses continuous integration to catch defects early and enable rapid iteration:
+- **Version control**: Git-based workflow with branch protection, code review, and signed commits.
+- **CI pipeline stages**:
+  1. Static analysis (MISRA-C, cppcheck, Coverity) — run on every commit.
+  2. Unit tests — component-level tests with code coverage tracking (target >80%).
+  3. Integration tests — inter-module tests with mocked hardware interfaces.
+  4. Software-in-the-loop (SIL) — full FSW on host PC with simulated plant models.
+  5. Processor-in-the-loop (PIL) — FSW compiled for target CPU, run on eval board or emulator.
+  6. Hardware-in-the-loop (HIL) — FSW on flight-like hardware with simulated sensors/actuators.
+- **Artifact management**: Versioned build artifacts, traceable to requirements and test results.
+- **Deployment**: Over-the-air (OTA) update capability for on-orbit patches — requires safe rollback mechanism.
+- **Standards**: NASA-STD-8739.8 (SW Assurance), ECSS-Q-ST-80C, DO-178C (if human-rated).
+
+### 5. Simulation-in-the-Loop Testing
+Simulation environments validate FSW behavior before integration with real hardware:
+- **SIL (Software-in-the-Loop)**: FSW runs on development host. Plant dynamics, sensors, and actuators are mathematical models. Fastest iteration cycle — run thousands of scenarios per night.
+- **PIL (Processor-in-the-Loop)**: Cross-compiled FSW runs on target processor (or cycle-accurate emulator). Validates timing, memory layout, and compiler behavior.
+- **HIL (Hardware-in-the-Loop)**: FSW runs on flight-representative OBC. Real sensor interfaces with signal injection. Most representative but slowest and most expensive.
+- **Digital twin**: Persistent simulation that mirrors on-orbit state. Used for anomaly investigation, rehearsal, and predictive maintenance.
+- **Scenario libraries**: Build libraries of nominal, off-nominal, and edge-case scenarios that run in CI — regression testing for every commit.
+
+### 6. Automated Test Infrastructure
+- **FlatSat / Engineering Development Unit (EDU)**: Bench-level integration of flight-representative hardware — used for continuous HIL testing.
+- **Test automation framework**: Scripted test execution with automatic pass/fail evaluation. Reduce manual test from weeks to hours.
+- **Test coverage matrix**: Map requirements → test cases → test results. Automated gap reporting.
+- **Regression suite**: Library of tests that runs on every build to catch unintended side effects.
+- **Formal verification**: For safety-critical modules (FDIR state machines, command validators), consider model checking or formal proof tools (SPARK/Ada, TLA+, CBMC).
 
 ## Output Format
 1. **FSW Architecture Document (`fsw_architecture.md`)**: Software layers, tasking model, FDIR strategy, boot sequence.
