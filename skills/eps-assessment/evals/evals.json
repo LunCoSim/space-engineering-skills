@@ -1,0 +1,18 @@
+{
+    "skill_name": "eps-assessment",
+    "evals": [{
+            "id": 0,
+            "name": "leo-cubesat-sizing",
+            "prompt": "Perform an EPS assessment for a 6U CubeSat in a 500km LEO orbit. Average load is 40W, peak is 60W. Mission life is 3 years. Use Triple Junction cells (30% eff) and assume a 40% DOD for the battery to ensure long cycle life. Calculate required solar array area and battery capacity in Wh.",
+            "expected_output": "Solar array area around 0.15-0.2 m^2 and battery capacity around 100-120 Wh depending on efficiency assumptions.",
+            "files": []
+        },
+        {
+            "id": 1,
+            "name": "lunar-lander-sizing",
+            "prompt": "Size the power system for a small lunar lander. The lander needs 200W constant power during the 14-day lunar day. It must survive the 14-day lunar night in a low-power mode (20W) using only batteries. Use a 80% DOD for the lunar night (single cycle). Solar flux is 1367 W/m^2. Calculate array size for day ops and battery size for night survival.",
+            "expected_output": "Very large battery required (around 8-10 kWh) and modest solar array (around 1 m^2) to support day ops and recharging.",
+            "files": []
+        }
+    ]
+}
