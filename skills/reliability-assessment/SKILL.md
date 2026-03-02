@@ -1,6 +1,6 @@
 ---
 name: reliability-assessment
-description: Perform reliability and radiation risk assessments for space missions. Use this skill to calculate mission life probability, Total Ionizing Dose (TID), and identify single points of failure. Trigger this for "reliability analysis," "FMECA," or "radiation hardening."
+description: Perform reliability and radiation risk assessments for space missions. Use this skill to calculate mission life probability, TID, and FMECA. This skill provides the bottom-up failure data used as 'Causes' in the hazard-analysis skill.
 ---
 
 # Reliability & radiation Assessment Skill

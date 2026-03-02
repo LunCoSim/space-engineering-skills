@@ -1,0 +1,23 @@
+{
+  "name": "hazard-analysis-evals",
+  "evals": [
+    {
+      "prompt": "Identify potential hazards for a pressurized lunar habitat module.",
+      "expected_output_contains": [
+        "Pressure Release",
+        "Toxicity",
+        "Fire",
+        "Oxygen"
+      ]
+    },
+    {
+      "prompt": "Create a hazard report for 'Battery Thermal Runaway' and link it to a required safety inhibit.",
+      "expected_output_contains": [
+        "Hazard ID",
+        "Risk Index",
+        "Inhibit",
+        "Control"
+      ]
+    }
+  ]
+}

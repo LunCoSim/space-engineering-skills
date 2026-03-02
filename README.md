@@ -20,15 +20,27 @@ graph TD
     RM --> SA[structural-assessment]
     RM --> PA[propulsion-assessment]
     RM --> RA[reliability-assessment]
+    RM --> HA[hazard-analysis]
+    RM --> GNC[gnc-assessment]
+    RM --> EPS[power-assessment]
+    RM --> COM[communications-assessment]
+    RM --> FSW[flight-software-architect]
+    RM --> AIT[ait-manager]
     
     SE <--> TA
     SE <--> SA
     SE <--> PA
+    SE <--> GNC
+    SE <--> EPS
+    SE <--> COM
     
     TA --- VV
     SA --- VV
     PA --- VV
     RA --- VV
+    GNC --- VV
+    EPS --- VV
+    COM --- VV
     
     OC[orbital-conops-manager] --> RM
     LC[lunar-conops-manager] --> RM
@@ -44,6 +56,12 @@ Skills cross-reference each other: systems-eng ↔ v-and-v ↔ requirements-mana
 - [structural-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/structural-assessment)
 - [propulsion-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/propulsion-assessment)
 - [reliability-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/reliability-assessment)
+- [hazard-analysis](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/hazard-analysis)
+- [gnc-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/gnc-assessment)
+- [power-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/power-assessment)
+- [communications-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/communications-assessment)
+- [flight-software-architect](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/flight-software-architect)
+- [ait-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/ait-manager)
 - [orbital-conops-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/orbital-conops-manager)
 - [lunar-conops-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/lunar-conops-manager)
 
@@ -102,6 +120,12 @@ Once installed, your AI agent will automatically detect the skills and use them 
 - **structural-assessment** - Mass properties, CG, MOI, and margins of safety.
 - **propulsion-assessment** - Delta-V calculations and propellant sizing.
 - **reliability-assessment** - FMECA, reliability block diagrams, and radiation analysis.
+- **hazard-analysis** - Top-down safety identification, risk indexing, and controls.
+- **gnc-assessment** - Pointing budgets, actuator sizing, and sensor selection.
+- **power-assessment** - Solar array sizing, battery DoD, and power distribution.
+- **communications-assessment** - RF link budgets and data volume analysis.
+- **flight-software-architect** - FSW architecture, processor sizing, and FDIR logic.
+- **ait-manager** - Assembly, Integration, and Test planning and GSE.
 
 
 ## Contributing
