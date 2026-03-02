@@ -19,17 +19,12 @@ As an agent, you have the following specialized skills available in the `skills/
 - **Mission Execution**: `mission-operations-manager` (Planning & Ops) and `mission-analysis-specialist` (Astrodynamics & Trajectory).
 - **Domain Analysis**: `power-assessment` (Solar array & battery sizing), `communications-assessment` (Link budgets), `thermal-assessment` (Heat balance), `structural-assessment` (Loads & MoS), `propulsion-assessment` (Delta-V), `gnc-assessment` (Pointing & actuators), `payload-assessment` (Instrument sizing & data rates).
 - **Reliability & Safety**: `reliability-assessment` (Risk & Radiation), `hazard-analysis` (Safety & Inhibits).
-<<<<<<< HEAD
 - **Embedded Systems**: `flight-software-architect` (FSW architecture, FDIR, CI/CD, and simulation-in-the-loop testing).
 - **Architecture & Decision-Making**: `trade-study-manager` (Structured trade studies & Figures of Merit).
 - **Cost & Production**: `cost-modeling` (Parametric cost estimation & lifecycle costing), `manufacturing-assessment` (DFM/DFA & production planning), `reusability-analysis` (Recovery systems & flight-rate economics).
 - **Human Spaceflight & ISRU**: `eclss-assessment` (Life support: O₂, CO₂, water, habitable volume), `isru-assessment` (In-situ resource utilization & propellant production).
 - **Constellation**: `constellation-design` (Walker patterns, coverage analysis, ISLs, deployment).
 - **Ground Segment**: `ground-systems-assessment` (Mission control, ground stations, launch facilities, GSE).
-=======
-- **Embedded Systems**: `flight-software-architect` (FSW architecture & FDIR logic).
-- **Programmatic**: `cost-estimation` (Parametric cost modeling, CERs, cost-risk S-curves, design-to-cost).
->>>>>>> origin/main
 - **Closure & Execution**: `v-and-v-manager` (Compliance audit) and `ait-manager` (Assembly, Integration, and Test).
 
 

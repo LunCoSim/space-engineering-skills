@@ -77,7 +77,6 @@ graph TD
     MOM[mission-operations-manager] --> OC
     MOM --> LC
 
-<<<<<<< HEAD
     SE --> CM[cost-modeling]
     PA --> CM
     CM --> TS
@@ -110,10 +109,8 @@ graph TD
     MAS --> GS
     MOM --> GS
     GS --> CM
-=======
     SE --> CE[cost-estimation]
     TS --> CE
->>>>>>> origin/main
 ```
 
 ---
