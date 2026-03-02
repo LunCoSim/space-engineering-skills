@@ -1,15 +1,27 @@
 # Space Engineering Skills for AI Agents
 
-A collection of AI agent skills focused on space engineering tasks. Built for aerospace engineers, mission designers, and founders who want AI coding agents to help with systems engineering, structural analysis, thermal modeling, propulsion, and reliability. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
+> [!IMPORTANT]
+> A comprehensive collection of specialized AI agent skills for space engineering. Built for aerospace engineers, mission designers, and founders who want AI coding agents (like Claude Code, Cursor, Windsurf, or OpenAI) to help with systems engineering, structural analysis, thermal modeling, propulsion, and reliability.
 
 Built by [LunCo](https://lunco.space). Need hands-on help with space mission design or AI agent integration? [Get in touch](mailto:contact@lunco.space).
 
 ---
 
-## What are Skills?
-Skills are markdown files that give AI agents specialized knowledge and workflows for specific tasks. When you add these to your project, your agent can recognize when you're working on a space engineering task and apply the right frameworks, standards, and best practices.
+## 🚀 Quick Start
 
-## How Skills Work Together
+If you have `npx` installed, you can add all skills to your project in one command:
+
+```bash
+# Initialize all space engineering skills in your project
+npx skills add LunCoSim/space-engineering-skills
+```
+
+## 🧠 What are Skills?
+
+Skills are markdown files (`SKILL.md`) that give AI agents specialized knowledge and workflows for specific tasks. When you add these to your project, your agent can recognize when you're working on a space engineering task and apply the right frameworks, standards, and best practices.
+
+## 🔗 How Skills Work Together
+
 Skills reference each other and build on shared context. The `requirements-manager` skill is the foundation — every other skill checks it first to understand your system requirements, constraints, and verification criteria before doing anything.
 
 ```mermaid
@@ -46,28 +58,33 @@ graph TD
     LC[lunar-conops-manager] --> RM
 ```
 
-Skills cross-reference each other: systems-eng ↔ v-and-v ↔ requirements-manager ↔ orbital-ops ↔ lunar-ops.
+---
 
-## Available Skills
-- [requirements-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/requirements-manager)
-- [v-and-v-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/v-and-v-manager)
-- [systems-engineering-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/systems-engineering-assessment)
-- [thermal-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/thermal-assessment)
-- [structural-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/structural-assessment)
-- [propulsion-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/propulsion-assessment)
-- [reliability-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/reliability-assessment)
-- [hazard-analysis](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/hazard-analysis)
-- [gnc-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/gnc-assessment)
-- [power-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/power-assessment)
-- [communications-assessment](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/communications-assessment)
-- [flight-software-architect](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/flight-software-architect)
-- [ait-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/ait-manager)
-- [orbital-conops-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/orbital-conops-manager)
-- [lunar-conops-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/lunar-conops-manager)
-- [mission-operations-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/mission-operations-manager)
-- [mission-analysis-specialist](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/mission-analysis-specialist)
+## 🛠 Available Skills
 
-## Installation
+| Category | Skill | Summary |
+| :--- | :--- | :--- |
+| **Management** | [requirements-manager](skills/requirements-manager) | Define, update, and trace system requirements in a human-readable format. |
+| **Management** | [v-and-v-manager](skills/v-and-v-manager) | Manage Verification and Validation (V&V) by linking assessments to requirements. |
+| **Management** | [systems-engineering-assessment](skills/systems-engineering-assessment) | Top-level integrator for mass, power, and link budgets. |
+| **Management** | [hazard-analysis](skills/hazard-analysis) | Top-down safety identification, risk indexing, and controls. |
+| **Operations** | [orbital-conops-manager](skills/orbital-conops-manager) | Concept of Operations and orbital mechanics for Earth missions. |
+| **Operations** | [lunar-conops-manager](skills/lunar-conops-manager) | Surface operations, traverse planning, and 14-day lunar cycle management. |
+| **Operations** | [mission-operations-manager](skills/mission-operations-manager) | T&C definitions, pass planning, and anomaly resolution. |
+| **Operations** | [ait-manager](skills/ait-manager) | Assembly, Integration, and Test planning and GSE requirements. |
+| **Analysis** | [mission-analysis-specialist](skills/mission-analysis-specialist) | Astrodynamics, trajectory design, and delta-v budgets. |
+| **Analysis** | [thermal-assessment](skills/thermal-assessment) | Heat balance, radiator sizing, and MLI modeling. |
+| **Analysis** | [structural-assessment](skills/structural-assessment) | Mass properties, CG, MOI, and Margins of Safety analysis. |
+| **Analysis** | [propulsion-assessment](skills/propulsion-assessment) | Delta-V requirements, propellant sizing, and T/W ratios. |
+| **Analysis** | [reliability-assessment](skills/reliability-assessment) | FMECA, TID, and mission life probability modeling. |
+| **Analysis** | [gnc-assessment](skills/gnc-assessment) | Pointing budgets, actuator sizing (wheels/rods), and sensor selection. |
+| **Analysis** | [power-assessment](skills/power-assessment) | Solar array BOL/EOL sizing and battery DoD analysis. |
+| **Analysis** | [communications-assessment](skills/communications-assessment) | RF link budget analysis and data volume assessments. |
+| **Analysis** | [flight-software-architect](skills/flight-software-architect) | FSW architecture, processor sizing, and FDIR logic. |
+
+---
+
+## 📥 Installation
 
 ### Option 1: CLI Install (Recommended)
 Use [npx skills](https://github.com/vercel-labs/skills) to install skills directly:
@@ -78,12 +95,7 @@ npx skills add LunCoSim/space-engineering-skills
 
 # Install specific skills
 npx skills add LunCoSim/space-engineering-skills --skill requirements-manager thermal-assessment
-
-# List available skills
-npx skills add LunCoSim/space-engineering-skills --list
 ```
-
-This automatically installs to your `.agents/skills/` directory (and symlinks into `.claude/skills/` for Claude Code compatibility).
 
 ### Option 2: Clone and Copy
 Clone the repository and copy the skills you need into your project's `.agents/skills` or `skills` folder.
@@ -93,14 +105,8 @@ git clone https://github.com/LunCoSim/space-engineering-skills.git
 cp -r space-engineering-skills/skills/[skill-name] your-project/.agents/skills/
 ```
 
-### Option 3: Git Submodule
-Add as a submodule for easy updates:
+## 📖 Usage
 
-```bash
-git submodule add https://github.com/LunCoSim/space-engineering-skills.git .agents/space-engineering-skills
-```
-
-## Usage
 Once installed, your AI agent will automatically detect the skills and use them when you ask tasks related to their specialized knowledge.
 
 **Example Prompts:**
@@ -108,33 +114,11 @@ Once installed, your AI agent will automatically detect the skills and use them 
 - *"Perform a preliminary thermal assessment for a 12U CubeSat in LEO."*
 - *"Trace the structural requirements to the CAD verification test plan."*
 
-## Skill Categories
+---
 
-### Systems & Mission Management
-- **requirements-manager** - Define, update, and trace system requirements.
-- **v-and-v-manager** - Verification and validation tracking.
-- **systems-engineering-assessment** - High-level systems trade-offs and integration.
-- **orbital-conops-manager** - Concept of Operations for orbital missions.
-- **lunar-conops-manager** - Concept of Operations for lunar surface missions.
-- **mission-operations-manager** - Mission planning, T&C definition, and anomaly resolution.
+## 🤝 Contributing
+Found a way to improve a skill or have a new one to add? [Open a PR](https://github.com/LunCoSim/space-engineering-skills/pulls).
 
-### Engineering Analysis
-- **mission-analysis-specialist** - Astrodynamics, trajectory design, and delta-v budgets.
-- **thermal-assessment** - Thermal modeling and radiator sizing.
-- **structural-assessment** - Mass properties, CG, MOI, and margins of safety.
-- **propulsion-assessment** - Delta-V calculations and propellant sizing.
-- **reliability-assessment** - FMECA, reliability block diagrams, and radiation analysis.
-- **hazard-analysis** - Top-down safety identification, risk indexing, and controls.
-- **gnc-assessment** - Pointing budgets, actuator sizing, and sensor selection.
-- **power-assessment** - Solar array sizing, battery DoD, and power distribution.
-- **communications-assessment** - RF link budgets and data volume analysis.
-- **flight-software-architect** - FSW architecture, processor sizing, and FDIR logic.
-- **ait-manager** - Assembly, Integration, and Test planning and GSE.
-
-
-## Contributing
-Contributions are welcome! Found a way to improve a skill or have a new one to add? [Open a PR](https://github.com/LunCoSim/space-engineering-skills/pulls).
-
-## License
+## 📄 License
 This project is licensed under the Apache 2.0 License. See the [LICENSE](LICENSE) file for more details.
 
