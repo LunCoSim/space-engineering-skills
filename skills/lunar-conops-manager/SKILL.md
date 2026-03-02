@@ -5,7 +5,7 @@ description: Define surface operations and mission timelines for lunar missions.
 
 # Lunar ConOps Manager Skill
 
-This skill focuses on the unique challenges of the lunar surface environment, specifically the extreme duty cycles and environmental constraints.
+This skill focuses on the unique challenges of the lunar surface environment, specifically the extreme duty cycles and environmental constraints. For the orbital transit to the moon or Earth-approach trajectories, this skill should delegate and coordinate with the `mission-analysis-specialist`.
 
 ## Mission Phases
 - **Descent & Landing**: Final approach and touchdown sequence.

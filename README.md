@@ -64,6 +64,8 @@ Skills cross-reference each other: systems-eng ↔ v-and-v ↔ requirements-mana
 - [ait-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/ait-manager)
 - [orbital-conops-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/orbital-conops-manager)
 - [lunar-conops-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/lunar-conops-manager)
+- [mission-operations-manager](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/mission-operations-manager)
+- [mission-analysis-specialist](https://github.com/LunCoSim/space-engineering-skills/tree/main/skills/mission-analysis-specialist)
 
 ## Installation
 
@@ -114,8 +116,10 @@ Once installed, your AI agent will automatically detect the skills and use them 
 - **systems-engineering-assessment** - High-level systems trade-offs and integration.
 - **orbital-conops-manager** - Concept of Operations for orbital missions.
 - **lunar-conops-manager** - Concept of Operations for lunar surface missions.
+- **mission-operations-manager** - Mission planning, T&C definition, and anomaly resolution.
 
 ### Engineering Analysis
+- **mission-analysis-specialist** - Astrodynamics, trajectory design, and delta-v budgets.
 - **thermal-assessment** - Thermal modeling and radiator sizing.
 - **structural-assessment** - Mass properties, CG, MOI, and margins of safety.
 - **propulsion-assessment** - Delta-V calculations and propellant sizing.

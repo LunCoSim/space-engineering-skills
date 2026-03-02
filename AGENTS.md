@@ -16,6 +16,7 @@ As an agent, you have the following specialized skills available in the `skills/
 - **Requirements Management**: `requirements-manager` (Define, update, and trace system requirements).
 - **Integrated Systems Assessment**: `systems-engineering-assessment` (The Integrator - Mass, Power, and Link budgets).
 - **Mission Context**: `orbital-conops-manager` (Earth orbit) and `lunar-conops-manager` (Lunar surface & night survival).
+- **Mission Execution**: `mission-operations-manager` (Planning & Ops) and `mission-analysis-specialist` (Astrodynamics & Trajectory).
 - **Domain Analysis**: `power-assessment` (Solar array & battery sizing), `communications-assessment` (Link budgets), `thermal-assessment` (Heat balance), `structural-assessment` (Loads & MoS), `propulsion-assessment` (Delta-V), `gnc-assessment` (Pointing & actuators).
 - **Reliability & Safety**: `reliability-assessment` (Risk & Radiation), `hazard-analysis` (Safety & Inhibits).
 - **Embedded Systems**: `flight-software-architect` (FSW architecture & FDIR logic).
@@ -24,7 +25,7 @@ As an agent, you have the following specialized skills available in the `skills/
 
 ## Directory Structure Rules
 
-When creating or modifying a skill, adhere strictly to this structure:
+When creating or modifying a skill, adhere strictly to this structure. Create folders only when nessesary:
 
 ```text
 skills/

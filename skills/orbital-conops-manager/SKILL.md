@@ -11,19 +11,14 @@ This skill defines how the spacecraft lives and moves in orbit. It provides the 
 - **LEOP (Launch & Early Orbit Phase)**: Deployment, detumble, and initial systems checkout.
 - **Commissioning**: Payload calibration and performance verification.
 - **Nominal Operations**: The primary science or service phase of the mission.
-- **Decomissioning/Disposal**: De-orbiting or moving to a graveyard orbit.
+- **Decommissioning/Disposal**: De-orbiting or moving to a graveyard orbit.
 
-## Orbital Analysis
-- **Parameters**: Altitude (km), Inclination (deg), Eccentricity, and RAAN.
-- **Environment**: Calculate eclipse duration and Beta Angle to inform the Power and Thermal budgets.
-- **Ground Access**: Estimate contact windows with ground stations based on orbital height and station coordinates.
+## Strategic Planning
+Focus on the *logic* and *timing* of mission events. For technical orbital calculations (Delta-V, ground tracks, eclipse durations), always consult the `mission-analysis-specialist` skill.
 
-## Maneuver Planning
-- **Deterministic Logic**: Use embedded scripts (when available) or verified equations for:
-    - Hohmann Transfers ($\Delta V$ for altitude changes).
-    - Plane Changes ($\Delta V$ for inclination adjustments).
-    - Drag Compensation (Station-keeping).
-- **Output**: Feeding $\Delta V$ values directly into the `propulsion-assessment` skill.
+## Maneuver Strategy
+- **Phase Definition**: Define *when* and *why* a maneuver is needed (e.g., "Orbit raising to operational altitude during Day 2").
+- **Collaboration**: Provide the mission requirements to `mission-analysis-specialist` to get the necessary $\Delta V$ values, then pass those to `propulsion-assessment` for fuel sizing.
 
 ## Output Format
 1. **ConOps Document (`conops.md`)**: A timeline of mission events and a description of orbital states.

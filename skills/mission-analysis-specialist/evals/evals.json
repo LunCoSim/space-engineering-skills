@@ -1,0 +1,23 @@
+{
+  "skill_name": "mission-analysis-specialist",
+  "evals": [
+    {
+      "id": "hohmann_leo_geo",
+      "prompt": "Calculate the total Delta-V required for a Hohmann transfer from a 500 km circular parking orbit (inclination = 28.5 deg) to a Geosynchronous Equatorial Orbit (GEO, 35786 km altitude, 0 deg inclination). Include the plane change at apogee. Assume standard Earth mu.",
+      "expected_output": "A step-by-step calculation showing v1, v2, plane change delta-v, and total delta-v, resulting in approx 4.3 km/s.",
+      "files": []
+    },
+    {
+      "id": "eclipse_leo",
+      "prompt": "For a circular LEO orbit at 600 km altitude, calculate the orbital period and the maximum possible eclipse duration (Umbra) assuming a cylindrical Earth shadow model. Use R_earth = 6378 km.",
+      "expected_output": "Calculation of period (~96.7 mins) and max eclipse duration (~35-36 mins) with clear working.",
+      "files": []
+    },
+    {
+      "id": "ground_track_shift",
+      "prompt": "A satellite is in a circular orbit with a semi-major axis of 7000 km. Calculate its nodal period and the longitude shift of the ground track per orbit (in degrees West).",
+      "expected_output": "Period calculation (~97.4 mins) and ground track shift (~24.4 degrees West) calculation.",
+      "files": []
+    }
+  ]
+}

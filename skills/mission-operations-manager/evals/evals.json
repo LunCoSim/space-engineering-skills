@@ -1,0 +1,22 @@
+{
+  "skill_name": "mission-operations-manager",
+  "evals": [
+    {
+      "id": "telemetry_def_eps",
+      "prompt": "Create a telemetry definition for a CubeSat EPS (Electrical Power System) subsystem. Include battery voltage, solar array currents (X+, X-, Y+, Y-), and 3.3V/5V bus currents. Define appropriate red/yellow limits for a Li-Ion battery (nominal 8.4V max). Output as YAML.",
+      "expected_output": "A YAML formatted telemetry definition including all requested parameters with reasonable limits.",
+      "files": []
+    },
+    {
+      "id": "pass_planning_leo",
+      "prompt": "Plan a 10-minute ground station pass for a LEO satellite starting at 2026-06-01T12:00:00Z. The goal is to downlink 50MB of payload data. Assume a downlink rate of 2 Mbps. Include acquisition, health checks, data dump, and safeing before LOS.",
+      "expected_output": "A markdown table showing the timeline of commands and events, confirming data volume fits within the pass duration.",
+      "files": []
+    },
+    {
+      "id": "anomaly_investigation",
+      "prompt": "The satellite entered Safe Mode at 03:15 UTC. Telemetry shows Battery Voltage dropped to 6.0V (Red Low Limit) suddenly. Just prior to this, the 'Heater_A' status went to ON. Diagnose the potential issue and recommend an immediate recovery action.",
+      "expected_output": "An Anomaly Report identifying a likely short circuit or heater malfunction and recommending isolating the heater circuit and verifying bus stability."
+    }
+  ]
+}
