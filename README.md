@@ -97,39 +97,12 @@ Once installed, your AI agent will automatically detect the skills and use them 
 - **orbital-conops-manager** - Concept of Operations for orbital missions.
 - **lunar-conops-manager** - Concept of Operations for lunar surface missions.
 
-```
-requirements-manager
-```
-
-```
-v-and-v-manager
-```
-
-```
-systems-engineering-assessment
-```
-
 ### Engineering Analysis
 - **thermal-assessment** - Thermal modeling and radiator sizing.
 - **structural-assessment** - Mass properties, CG, MOI, and margins of safety.
 - **propulsion-assessment** - Delta-V calculations and propellant sizing.
 - **reliability-assessment** - FMECA, reliability block diagrams, and radiation analysis.
 
-```
-thermal-assessment
-```
-
-```
-structural-assessment
-```
-
-```
-propulsion-assessment
-```
-
-```
-reliability-assessment
-```
 
 ## Contributing
 Contributions are welcome! Found a way to improve a skill or have a new one to add? [Open a PR](https://github.com/LunCoSim/space-engineering-skills/pulls).
