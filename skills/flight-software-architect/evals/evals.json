@@ -1,0 +1,11 @@
+{
+  "skill_name": "flight-software-architect",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Propose an FDIR strategy for a CubeSat that loses communication for more than 48 hours.",
+      "expected_output": "A strategy involving a watchdog timer, transition to 'Safe Mode', and automated antenna omni-directional beaconing.",
+      "files": []
+    }
+  ]
+}

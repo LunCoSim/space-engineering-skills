@@ -1,0 +1,11 @@
+{
+  "skill_name": "gnc-assessment",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Create a pointing budget for a telescope satellite requiring 0.1 arcsec stability. Assume knowledge error of 0.05 arcsec and control jitter of 0.07 arcsec. Calculate the RSS total.",
+      "expected_output": "A markdown table showing the error sources and an RSS total of ~0.086 arcsec, confirming it meets the 0.1 arcsec requirement.",
+      "files": []
+    }
+  ]
+}

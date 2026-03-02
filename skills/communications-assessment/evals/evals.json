@@ -1,0 +1,11 @@
+{
+  "skill_name": "communications-assessment",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Calculate a simple downlink budget: 1W transmitter, 3dB antenna gain, -140dB path loss, 5dB receive gain. What is the received power?",
+      "expected_output": "Received power calculation: 0dBW (1W) + 3dB - 140dB + 5dB = -132 dBW.",
+      "files": []
+    }
+  ]
+}

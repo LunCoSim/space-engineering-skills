@@ -1,0 +1,11 @@
+{
+  "skill_name": "ait-manager",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "List the standard environmental tests required for a ride-share payload on a Falcon 9.",
+      "expected_output": "A list including Random Vibration, Sine Burst, Thermal Vacuum / Thermal Cycling, and Shock (if applicable).",
+      "files": []
+    }
+  ]
+}

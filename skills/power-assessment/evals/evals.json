@@ -1,0 +1,11 @@
+{
+  "skill_name": "power-assessment",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Size a battery for a 50W average load in LEO (35 min eclipse) with a max 30% DoD. Use 95% discharge efficiency.",
+      "expected_output": "Calculation showing ~102.3 Wh required battery capacity.",
+      "files": []
+    }
+  ]
+}
